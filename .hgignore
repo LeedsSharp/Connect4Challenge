@@ -1,0 +1,8 @@
+syntax: regexp
+_ReSharper.Connect4Challenge/*
+Connect4Challenge.Logic/bin/*
+Connect4Challenge.Logic/obj/*
+Connect4Challenge.ConsoleApp/obj/*
+Connect4Challenge.ConsoleApp/bin/*
+syntax: glob
+Connect4Challenge.sln.docstates.suo
