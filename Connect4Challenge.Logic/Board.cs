@@ -77,7 +77,7 @@ namespace Connect4Challenge.Logic
 			}
 		}
 
-		private Char? CheckPlace(int x, int y)
+		protected Char? CheckPlace(int x, int y)
 		{
 			var worthCheckingLeft = x + NumberInARow < Size;
 			if (worthCheckingLeft)
@@ -102,7 +102,7 @@ namespace Connect4Challenge.Logic
 			return null;
 		}
 
-		private Char? CheckUpLeft(int x, int y)
+		protected Char? CheckUpLeft(int x, int y)
 		{
 			var firstChar = this[x, y];
 			if (firstChar == ' ') return null;
@@ -114,7 +114,7 @@ namespace Connect4Challenge.Logic
 			return firstChar;
 		}
 
-		private Char? CheckUpRight(int x, int y)
+		protected Char? CheckUpRight(int x, int y)
 		{
 			var firstChar = this[x, y];
 			if (firstChar == ' ') return null;
@@ -126,7 +126,7 @@ namespace Connect4Challenge.Logic
 			return firstChar;
 		}
 
-		private Char? CheckUp(int x, int y)
+		protected Char? CheckUp(int x, int y)
 		{
 			var firstChar = this[x, y];
 			if (firstChar == ' ') return null;
@@ -138,7 +138,7 @@ namespace Connect4Challenge.Logic
 			return firstChar;
 		}
 
-		private Char? CheckLeft(int x, int y)
+		protected Char? CheckLeft(int x, int y)
 		{
 			var firstChar = this[x, y];
 			if (firstChar == ' ') return null;
