@@ -47,7 +47,7 @@ namespace Connect4Challenge.Logic
 
 		public virtual bool Drop(Player player, int place)
 		{
-			if (place < 0 || place >= Size)
+			if (place < 0 || place >= Size || BoardPlaces[place].Count >= Size)
 			{
 				throw new Exception(String.Format("An {0} was placed outside of the board.", player.DisplayLetter));
 			}

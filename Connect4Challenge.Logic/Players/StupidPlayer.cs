@@ -23,15 +23,28 @@ namespace Connect4Challenge.Logic.Players
 			}
 		}
 
+		private void SetNewRandomColumn()
+		{
+			_dropRow = Rand.Next(0, Board.Size - 1);
+		}
+
 		public override void Go()
 		{
-			Board.Drop(this, _dropRow);
+			try
+			{
+				Board.Drop(this, _dropRow);
+			}
+			catch (Exception)
+			{
+				SetNewRandomColumn();
+				Go(); // Stupid player could get stuck in infinite loop
+			}
 		}
 
 		public override void NewBoard(Board board, char displayLetter)
 		{
 			base.NewBoard(board, displayLetter);
-			_dropRow = Rand.Next(0, board.Size - 1);
+			SetNewRandomColumn();
 		}
 	}
 }
