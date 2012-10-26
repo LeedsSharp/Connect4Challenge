@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4Challenge.ConsoleAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4Challenge.Logic", "Connect4Challenge.Logic\Connect4Challenge.Logic.csproj", "{868FDF9E-B144-4D2E-AF29-F4053600489D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4Challenge.Tests", "Connect4Challenge.Tests\Connect4Challenge.Tests.csproj", "{5DF19A67-B54B-4768-903B-579C3D9D3989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{868FDF9E-B144-4D2E-AF29-F4053600489D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{868FDF9E-B144-4D2E-AF29-F4053600489D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{868FDF9E-B144-4D2E-AF29-F4053600489D}.Release|x86.ActiveCfg = Release|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5DF19A67-B54B-4768-903B-579C3D9D3989}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

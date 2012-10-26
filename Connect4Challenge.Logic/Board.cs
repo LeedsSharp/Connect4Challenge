@@ -8,8 +8,8 @@ namespace Connect4Challenge.Logic
 	{
 		public int Size { get; private set; }
 
-		private readonly List<List<Char>> _boardPlaces;
-		private const int NumberInARow = 4;
+		protected readonly List<List<Char>> _boardPlaces;
+		protected const int NumberInARow = 4;
 
 
 		public Board()
@@ -26,13 +26,26 @@ namespace Connect4Challenge.Logic
 		{
 			get
 			{
+				if (x < 0 || y < 0 || x >= Size || y >= Size) return ' ';
+
 				return (y >= _boardPlaces[x].Count)
 					? ' '
 					: _boardPlaces[x][y];
 			}
 		}
 
-		public bool Drop(Player player, int place)
+		public Board Clone()
+		{
+			var clonedBoard = new Board();
+			for (var i = 0; i < Size; i++)
+			{
+				clonedBoard._boardPlaces[0] = new List<Char>(_boardPlaces[0]);
+			}
+
+			return clonedBoard;
+		}
+
+		public virtual bool Drop(Player player, int place)
 		{
 			if (place < 0 || place >= Size)
 			{
@@ -80,11 +93,11 @@ namespace Connect4Challenge.Logic
 				if (a != null) return a;
 			}
 
-			if (worthCheckingUp && worthCheckingLeft)
-			{
-				var a = CheckUpLeft(x, y);
-				if (a != null) return a;
-			}
+			var isUpLeftWin = CheckUpLeft(x, y);
+			if (isUpLeftWin != null) return isUpLeftWin;
+
+			var isUpRightWin = CheckUpRight(x, y);
+			if (isUpRightWin != null) return isUpRightWin;
 
 			return null;
 		}
@@ -97,6 +110,18 @@ namespace Connect4Challenge.Logic
 			for(var i = 1; i < NumberInARow; i++)
 			{
 				if(this[x + i, y + i] != firstChar) return null;
+			}
+			return firstChar;
+		}
+
+		private Char? CheckUpRight(int x, int y)
+		{
+			var firstChar = this[x, y];
+			if (firstChar == ' ') return null;
+
+			for (var i = 1; i < NumberInARow; i++)
+			{
+				if (this[x + i, y - i] != firstChar) return null;
 			}
 			return firstChar;
 		}
