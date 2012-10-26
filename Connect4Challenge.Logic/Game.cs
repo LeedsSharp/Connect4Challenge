@@ -24,6 +24,9 @@ namespace Connect4Challenge.Logic
 			SetupPlayersOnNewBoard();
 		}
 
+		public Player Player1 { get { return _players[0]; } }
+		public Player Player2 { get { return _players[1]; } }
+
 		public Player Winner { get; private set; }
 
 		public Player NextTurn()
