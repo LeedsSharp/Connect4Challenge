@@ -7,11 +7,15 @@ namespace Connect4Challenge.ConsoleApp
 {
 	internal class AsciiPainter
 	{
-		public static void Draw(Board board)
+		public static void Draw(Game game)
 		{
-			var boardSize = board.Size;
-
 			Console.Clear();
+			Console.WriteLine("Player {0}: {1}", game.Player1.DisplayLetter, game.Player1.Name);
+			Console.WriteLine("Player {0}: {1}", game.Player2.DisplayLetter, game.Player2.Name);
+			Console.WriteLine();
+
+			var board = game.Board;
+			var boardSize = board.Size;
 
 			for (var y = boardSize - 1; y >= 0; y--)
 			{

@@ -19,14 +19,15 @@ namespace Connect4Challenge.ConsoleApp
 		{
 			var game = new Game();
 
-			AsciiPainter.Draw(game.Board);
+
+			AsciiPainter.Draw(game);
 
 			Player winner = null;
 			while (winner == null)
 			{
 				Thread.Sleep(800);
 				winner = game.NextTurn();
-				AsciiPainter.Draw(game.Board);
+				AsciiPainter.Draw(game);
 			}
 
 			Console.WriteLine("The winner was {0}.", winner);
