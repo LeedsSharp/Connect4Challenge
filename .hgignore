@@ -4,5 +4,8 @@ Connect4Challenge.Logic/bin/*
 Connect4Challenge.Logic/obj/*
 Connect4Challenge.ConsoleApp/obj/*
 Connect4Challenge.ConsoleApp/bin/*
+Connect4Challenge.Tests/obj/*
+Connect4Challenge.Tests/bin/*
 syntax: glob
 Connect4Challenge.sln.docstates.suo
+Connect4Challenge.Logic/Connect4Challenge.Logic.csproj.user

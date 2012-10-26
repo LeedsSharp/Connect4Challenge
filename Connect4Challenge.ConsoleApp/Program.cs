@@ -11,8 +11,8 @@ namespace Connect4Challenge.ConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			//PlaySingleGame();
-			PlayTournament();
+			PlaySingleGame();
+			//PlayTournament();
 		}
 
 		private static void PlaySingleGame()
@@ -54,6 +54,7 @@ namespace Connect4Challenge.ConsoleApp
 			while (roundWinnerCount > 1);
 			Console.ReadKey();
 		}
+		
 
 		private static IList<Player> GetTournamentPlayers()
 		{
