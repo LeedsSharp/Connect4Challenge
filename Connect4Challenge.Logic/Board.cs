@@ -8,17 +8,17 @@ namespace Connect4Challenge.Logic
 	{
 		public int Size { get; private set; }
 
-		protected readonly List<List<Char>> _boardPlaces;
+		protected readonly List<List<Char>> BoardPlaces;
 		protected const int NumberInARow = 4;
 
 
 		public Board()
 		{
 			Size = 8;
-			_boardPlaces = new List<List<Char>>();
+			BoardPlaces = new List<List<Char>>();
 			for (var i = 0; i < Size; i++)
 			{
-				_boardPlaces.Add(new List<Char>());
+				BoardPlaces.Add(new List<Char>());
 			}
 		}
 
@@ -28,9 +28,9 @@ namespace Connect4Challenge.Logic
 			{
 				if (x < 0 || y < 0 || x >= Size || y >= Size) return ' ';
 
-				return (y >= _boardPlaces[x].Count)
+				return (y >= BoardPlaces[x].Count)
 					? ' '
-					: _boardPlaces[x][y];
+					: BoardPlaces[x][y];
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace Connect4Challenge.Logic
 			var clonedBoard = new Board();
 			for (var i = 0; i < Size; i++)
 			{
-				clonedBoard._boardPlaces[0] = new List<Char>(_boardPlaces[0]);
+				clonedBoard.BoardPlaces[0] = new List<Char>(BoardPlaces[0]);
 			}
 
 			return clonedBoard;
@@ -52,12 +52,12 @@ namespace Connect4Challenge.Logic
 				throw new Exception(String.Format("An {0} was placed outside of the board.", player.DisplayLetter));
 			}
 
-			if(_boardPlaces[place].Count >= Size)
+			if(BoardPlaces[place].Count >= Size)
 			{
 				return false;
 			}
 
-			_boardPlaces[place].Add(player.DisplayLetter);
+			BoardPlaces[place].Add(player.DisplayLetter);
 			return true;
 		}
 
@@ -67,7 +67,7 @@ namespace Connect4Challenge.Logic
 			{
 				for (var x = 0; x < Size; x++)
 				{
-					for (var y = 0; y < _boardPlaces[x].Count; y++)
+					for (var y = 0; y < BoardPlaces[x].Count; y++)
 					{
 						var a = CheckPlace(x, y);
 						if (a != null) return a;
@@ -86,7 +86,7 @@ namespace Connect4Challenge.Logic
 				if (a != null) return a;
 			}
 
-			var worthCheckingUp = y + NumberInARow <= _boardPlaces[x].Count;
+			var worthCheckingUp = y + NumberInARow <= BoardPlaces[x].Count;
 			if (worthCheckingUp)
 			{
 				var a = CheckUp(x, y);

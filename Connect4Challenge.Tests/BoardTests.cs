@@ -102,5 +102,26 @@ namespace Connect4Challenge.Tests
 
 			Assert.AreEqual('x', _board.Winner);
 		}
+
+		[Test]
+		public void TestClonedBoardContainsSamePieces()
+		{
+			_board.Drop(_player1, 0);
+
+			var clonedBoard = _board.Clone();
+
+			Assert.AreEqual(_player1.DisplayLetter, _board[0, 0]);
+			Assert.AreEqual(_board[0, 0], clonedBoard[0, 0]);
+		}
+
+		[Test]
+		public void TestClonedBoardIsDifferentBoard()
+		{
+			var clonedBoard = _board.Clone();
+			_board.Drop(_player1, 1);
+
+			Assert.AreEqual(_player1.DisplayLetter, _board[1, 0]);
+			Assert.AreEqual(' ', clonedBoard[1, 0]);
+		}
 	}
 }
