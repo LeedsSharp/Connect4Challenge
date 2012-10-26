@@ -123,5 +123,15 @@ namespace Connect4Challenge.Tests
 			Assert.AreEqual(_player1.DisplayLetter, _board[1, 0]);
 			Assert.AreEqual(' ', clonedBoard[1, 0]);
 		}
+
+		[Test]
+		public void TestCanNotOverfilBoard()
+		{
+			for (var i = 0; i < _board.Size; i++)
+			{
+				_board.Drop(_player2, 4);
+			}
+			Assert.Throws<Exception>(() => _board.Drop(_player1, 4));
+		}
 	}
 }
