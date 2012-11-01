@@ -9,3 +9,4 @@ Connect4Challenge.Tests/bin/*
 syntax: glob
 Connect4Challenge.sln.docstates.suo
 Connect4Challenge.Logic/Connect4Challenge.Logic.csproj.user
+Connect4Challenge.suo
